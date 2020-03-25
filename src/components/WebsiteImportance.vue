@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <h2>{{ $static.data.edges[0].node.websiteImportance.name }}</h2>
-    <apexchart
-      width="100%"
-      type="pie"
-      :options="$static.data.edges[0].node.websiteImportance.chartOptions"
-      :series="$static.data.edges[0].node.websiteImportance.series"
-    />
-  </div>
+  <apexchart
+    width="350"
+    type="pie"
+    :options="$static.data.edges[0].node.websiteImportance.chartOptions"
+    :series="$static.data.edges[0].node.websiteImportance.series"
+  />
 </template>
 <static-query>
 query {
@@ -19,8 +16,10 @@ query {
         chartOptions {
           labels
           theme {
-              mode
               palette
+          }
+          legend {
+            position
           }
         }
           series
@@ -35,18 +34,8 @@ import VueApexCharts from "vue-apexcharts";
 export default {
   components: {
     apexchart: VueApexCharts
-  },
-  data() {
-    return {
-      chartOptions: {
-        theme: {
-          palette: "palette2"
-        }
-      }
-    };
   }
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

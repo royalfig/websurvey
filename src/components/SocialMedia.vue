@@ -2,8 +2,8 @@
   <apexchart
     width="350"
     type="pie"
-    :options="$static.data.edges[0].node.age.chartOptions"
-    :series="$static.data.edges[0].node.age.series"
+    :options="$static.data.edges[0].node.socialMedia.chartOptions"
+    :series="$static.data.edges[0].node.socialMedia.series"
   />
 </template>
 <static-query>
@@ -11,7 +11,8 @@ query {
   data: allGraphData {
     edges {
       node {
-        age {
+        socialMedia {
+        name
         chartOptions {
           labels
           theme {

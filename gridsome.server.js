@@ -45,8 +45,11 @@ module.exports = function(api) {
     // Add id and series name
     class pieGraph {
       constructor(data, filter) {
-        this.name = data[0].data[filter].label;
-        this.totalItems = data.map(item => item.data[filter].value);
+        this.filteredData = data.filter(item => item.data[filter]);
+        this.name = this.filteredData[0].data[filter].label;
+        this.totalItems = this.filteredData.map(
+          item => item.data[filter].value
+        );
         this.uniqueOptions = [...new Set(this.totalItems)].sort();
         this.aggregatedData = this.uniqueOptions.map(option => {
           let count = 0;
@@ -63,8 +66,10 @@ module.exports = function(api) {
           chartOptions: {
             labels: this.uniqueOptions,
             theme: {
-              mode: "dark",
-              palette: "palette4"
+              palette: "palette7"
+            },
+            legend: {
+              position: "bottom"
             }
           }
         };
@@ -93,6 +98,14 @@ module.exports = function(api) {
     graphData.addNode({
       age: new pieGraph(allData, "87436962", "Respondent Age").configObject,
       websiteImportance: new pieGraph(allData, "85042330", "Website Importance")
+        .configObject,
+      socialMedia: new pieGraph(allData, "85500080", "Social Media")
+        .configObject,
+      compBenefit: new pieGraph(allData, "85499617", "Companion Piece Benefit")
+        .configObject,
+      shouldRedesign: new pieGraph(allData, "85041895", "Should Redesign")
+        .configObject,
+      membershipStatus: new pieGraph(allData, "88080962", "Membership Status")
         .configObject
     });
   });

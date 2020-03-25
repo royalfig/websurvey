@@ -19,21 +19,15 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  /* color: #ffffff;
+  background-color: #343f57; */
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 1024px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
 }
 
 .nav__link {
