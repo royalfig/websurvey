@@ -24,7 +24,7 @@ body {
 }
 
 .layout {
-  max-width: 1024px;
+  max-width: 1224px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;

@@ -43,10 +43,10 @@ module.exports = function(api) {
     // Aggregate data and add it to the series
     // Make unique list of categories
     // Add id and series name
-    class pieGraph {
-      constructor(data, filter) {
+    class BarGraph {
+      constructor(data, filter, name) {
         this.filteredData = data.filter(item => item.data[filter]);
-        this.name = this.filteredData[0].data[filter].label;
+        this.name = name;
         this.totalItems = this.filteredData.map(
           item => item.data[filter].value
         );
@@ -62,51 +62,83 @@ module.exports = function(api) {
         });
         this.configObject = {
           name: this.name,
-          series: this.aggregatedData,
+          series: [{ name: this.name, data: this.aggregatedData }],
           chartOptions: {
-            labels: this.uniqueOptions,
+            xaxis: {
+              categories: this.uniqueOptions
+            },
             theme: {
               palette: "palette7"
             },
             legend: {
               position: "bottom"
+            },
+            plotOptions: {
+              bar: {
+                horizontal: true
+              }
             }
           }
         };
       }
     }
+    class MatrixGraph {
+      constructor(data, filter, name) {
+        this.filteredData = data.filter(item => item.data[filter]);
+        this.totalItems = this.filteredData.map(
+          item => item.data[filter].value
+        );
+        this.convertedToArray = this.totalItems.join("\n").split(/\n/);
+        this.uniqueArray = [...new Set(this.convertedToArray)].sort();
+        this.obj = {};
+        this.createdObj = this.createObj();
+        this.countedArray = this.countData();
+        this.test = console.log(this.obj);
+      }
 
-    // {
-    //   options: {
-    //     chart: {
-    //       id: "vuechart-example"
-    //     },
-    //     xaxis: {
-    //       categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-    //     }
-    //   },
-    //   series: [
-    //     {
-    //       name: "series-1",
-    //       data: [30, 40, 45, 50, 49, 60, 70, 91]
-    //     }
-    //   ]
-    // };
+      //Methods
+      createObj() {
+        this.uniqueArray.forEach(item => {
+          const key = item.match(/([A-Za-z& ]+)/)[0].trim();
+          this.obj[key] = {};
+        });
+      }
+
+      countData() {
+        this.uniqueArray.map(item => {
+          let count = 0;
+          const key = item.match(/([A-Za-z& ]+)/)[0].trim();
+          const prop = item.match(/\w+$/)[0].trim();
+
+          this.convertedToArray.map(item2 => {
+            if (item === item2) {
+              count++;
+            }
+          });
+          Object.assign(this.obj[key], { [prop]: count });
+        });
+      }
+    }
 
     const graphData = actions.addCollection({ typeName: "graphData" });
 
     graphData.addNode({
-      age: new pieGraph(allData, "87436962", "Respondent Age").configObject,
-      websiteImportance: new pieGraph(allData, "85042330", "Website Importance")
+      age: new BarGraph(allData, "87436962", "Respondent Age").configObject,
+      websiteImportance: new BarGraph(allData, "85042330", "Website Importance")
         .configObject,
-      socialMedia: new pieGraph(allData, "85500080", "Social Media")
+      socialMedia: new BarGraph(allData, "85500080", "Social Media")
         .configObject,
-      compBenefit: new pieGraph(allData, "85499617", "Companion Piece Benefit")
+      compBenefit: new BarGraph(allData, "85499617", "Companion Piece Benefit")
         .configObject,
-      shouldRedesign: new pieGraph(allData, "85041895", "Should Redesign")
+      shouldRedesign: new BarGraph(allData, "85041895", "Redesign Sentiment")
         .configObject,
-      membershipStatus: new pieGraph(allData, "88080962", "Membership Status")
-        .configObject
+      membershipStatus: new BarGraph(allData, "88080962", "Membership Status")
+        .configObject,
+      visitedPages: new MatrixGraph(
+        allData,
+        "85042495",
+        "Visited Pages"
+      ).countObjects()
     });
   });
 
