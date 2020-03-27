@@ -6,6 +6,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const axios = require("axios");
 require("dotenv").config();
+const path = require("path");
+const MatrixGraph = require(path.join(__dirname, "/src/utils/matrixGraph"));
+const SimpleGraph = require(path.join(__dirname, "/src/utils/SimpleGraph"));
 
 module.exports = function(api) {
   const websurveyID =
@@ -40,105 +43,37 @@ module.exports = function(api) {
 
     const allData = await forLoop();
 
-    // Aggregate data and add it to the series
-    // Make unique list of categories
-    // Add id and series name
-    class BarGraph {
-      constructor(data, filter, name) {
-        this.filteredData = data.filter(item => item.data[filter]);
-        this.name = name;
-        this.totalItems = this.filteredData.map(
-          item => item.data[filter].value
-        );
-        this.uniqueOptions = [...new Set(this.totalItems)].sort();
-        this.aggregatedData = this.uniqueOptions.map(option => {
-          let count = 0;
-          for (let i = 0; i < this.totalItems.length; i++) {
-            if (this.totalItems[i] === option) {
-              count++;
-            }
-          }
-          return count;
-        });
-        this.configObject = {
-          name: this.name,
-          series: [{ name: this.name, data: this.aggregatedData }],
-          chartOptions: {
-            xaxis: {
-              categories: this.uniqueOptions
-            },
-            theme: {
-              palette: "palette7"
-            },
-            legend: {
-              position: "bottom"
-            },
-            plotOptions: {
-              bar: {
-                horizontal: true
-              }
-            }
-          }
-        };
-      }
-    }
-    class MatrixGraph {
-      constructor(data, filter, name) {
-        this.filteredData = data.filter(item => item.data[filter]);
-        this.totalItems = this.filteredData.map(
-          item => item.data[filter].value
-        );
-        this.convertedToArray = this.totalItems.join("\n").split(/\n/);
-        this.uniqueArray = [...new Set(this.convertedToArray)].sort();
-        this.obj = {};
-        this.createdObj = this.createObj();
-        this.countedArray = this.countData();
-        this.test = console.log(this.obj);
-      }
-
-      //Methods
-      createObj() {
-        this.uniqueArray.forEach(item => {
-          const key = item.match(/([A-Za-z& ]+)/)[0].trim();
-          this.obj[key] = {};
-        });
-      }
-
-      countData() {
-        this.uniqueArray.map(item => {
-          let count = 0;
-          const key = item.match(/([A-Za-z& ]+)/)[0].trim();
-          const prop = item.match(/\w+$/)[0].trim();
-
-          this.convertedToArray.map(item2 => {
-            if (item === item2) {
-              count++;
-            }
-          });
-          Object.assign(this.obj[key], { [prop]: count });
-        });
-      }
-    }
-
     const graphData = actions.addCollection({ typeName: "graphData" });
 
     graphData.addNode({
-      age: new BarGraph(allData, "87436962", "Respondent Age").configObject,
-      websiteImportance: new BarGraph(allData, "85042330", "Website Importance")
-        .configObject,
-      socialMedia: new BarGraph(allData, "85500080", "Social Media")
-        .configObject,
-      compBenefit: new BarGraph(allData, "85499617", "Companion Piece Benefit")
-        .configObject,
-      shouldRedesign: new BarGraph(allData, "85041895", "Redesign Sentiment")
-        .configObject,
-      membershipStatus: new BarGraph(allData, "88080962", "Membership Status")
-        .configObject,
-      visitedPages: new MatrixGraph(
+      age: new SimpleGraph(allData, "87436962", "Respondent Age").configObject,
+      websiteImportance: new SimpleGraph(
         allData,
-        "85042495",
-        "Visited Pages"
-      ).countObjects()
+        "85042330",
+        "Website Importance"
+      ).configObject,
+      socialMedia: new SimpleGraph(allData, "85500080", "Social Media")
+        .configObject,
+      compBenefit: new SimpleGraph(
+        allData,
+        "85499617",
+        "Companion Piece Benefit"
+      ).configObject,
+      shouldRedesign: new SimpleGraph(allData, "85041895", "Redesign Sentiment")
+        .configObject,
+      membershipStatus: new SimpleGraph(
+        allData,
+        "88080962",
+        "Membership Status"
+      ).configObject,
+      visitedPages: new MatrixGraph(allData, "85042495", "Visited Pages")
+        .configObject,
+      helpfulPages: new MatrixGraph(allData, "85498946", "Helpful Pages")
+        .configObject,
+      helpfulFeatures: new MatrixGraph(allData, "85499867", "Useful Pages")
+        .configObject,
+      accessibility: new MatrixGraph(allData, "88133257", "Accessibility")
+        .configObject
     });
   });
 

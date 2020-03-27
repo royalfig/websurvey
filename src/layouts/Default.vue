@@ -19,12 +19,13 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  background-color: #eff4f7;
   /* color: #ffffff;
   background-color: #343f57; */
 }
 
 .layout {
-  max-width: 1224px;
+  max-width: 750px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
