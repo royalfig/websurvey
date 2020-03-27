@@ -1,14 +1,71 @@
 <template>
-  <apexchart height="350" type="bar" :options="options" :series="series" />
+  <div>
+    <apexcharts
+      type="bar"
+      height="350"
+      :options="$static.data.edges[0].node.accessibility.chartOptions"
+      :series="$static.data.edges[0].node.accessibility.series"
+    ></apexcharts>
+    <!-- <p>{{ series }}</p> -->
+  </div>
 </template>
+
+<static-query>
+query {
+  data: allGraphData {
+    edges {
+      node {
+        accessibility {
+          series {
+            name
+            data
+          }
+          chartOptions {
+            chart {
+              type
+              height
+              stacked
+              stackType
+              fontFamily
+            }
+            plotOptions {
+              bar {
+                horizontal
+              }
+            }
+            stroke {
+              width
+              colors
+            }
+            title {
+              text
+            }
+            xaxis {
+              categories
+            }
+            fill {
+              opacity
+            }
+            legend {
+              position
+              horizontalAlign
+              offsetX
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 import VueApexCharts from "vue-apexcharts";
+
 export default {
   components: {
-    apexchart: VueApexCharts
-  },
-  props: ["options", "series"]
+    apexcharts: VueApexCharts
+  }
 };
 </script>
 

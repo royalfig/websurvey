@@ -22,28 +22,8 @@ module.exports = class MatrixGraph {
     });
     this.series = this.getSeries();
     this.configObject = {
-      name: this.name,
       series: this.series,
-      chartOptions: {
-        chart: {
-          stacked: true,
-          height: 350
-        },
-        xaxis: {
-          categories: this.uniqueKeysSorted
-        },
-        theme: {
-          palette: "palette7"
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true
-          }
-        },
-        legend: {
-          position: "bottom"
-        }
-      }
+      chartOptions: this.getConfig()
     };
   }
 
@@ -64,7 +44,7 @@ module.exports = class MatrixGraph {
       });
     });
 
-    const series = this.uniquePropsSorted.map(x => {
+    const series = this.uniqueProps.map(x => {
       const name = x;
       const data = [];
       this.keyArray.forEach(y => {
@@ -73,5 +53,42 @@ module.exports = class MatrixGraph {
       return { name: name, data: data };
     });
     return series;
+  }
+
+  getConfig() {
+    const chartOptions = {
+      chart: {
+        type: "bar",
+        height: 350,
+        stacked: true,
+        stackType: "100%",
+        fontFamily:
+          "-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, sans-serif"
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true
+        }
+      },
+      stroke: {
+        width: 1,
+        colors: ["#fff"]
+      },
+      title: {
+        text: this.name
+      },
+      xaxis: {
+        categories: this.uniqueKeys
+      },
+      fill: {
+        opacity: 1
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "center",
+        offsetX: 0
+      }
+    };
+    return chartOptions;
   }
 };

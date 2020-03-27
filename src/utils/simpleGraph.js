@@ -15,23 +15,9 @@ module.exports = class simpleGraph {
     });
     this.configObject = {
       name: this.name,
+      labels: this.aggregatedData,
       series: [{ name: this.name, data: this.aggregatedData }],
-      chartOptions: {
-        xaxis: {
-          categories: this.uniqueOptions
-        },
-        theme: {
-          palette: "palette7"
-        },
-        legend: {
-          position: "bottom"
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true
-          }
-        }
-      }
+      categories: this.uniqueOptions
     };
   }
 };

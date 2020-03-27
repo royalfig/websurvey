@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <h1 class="title">HSS Website Redesign Survey Results</h1>
+
     <general-section />
     <accessibility-section />
     <user-experience-section />
@@ -11,18 +11,18 @@
 </template>
 
 <script>
-import General from "~/components/General.vue";
-import Accessibility from "~/components/Accessibility.vue";
-import UserExperience from "~/components/UserExperience.vue";
-import OtherWebsites from "~/components/OtherWebsites.vue";
-import Demographics from "~/components/Demographics.vue";
+import General from "~/components/General";
+import AccessibilitySection from "~/components/AccessibilitySection";
+import UserExperience from "~/components/UserExperience";
+import OtherWebsites from "~/components/OtherWebsites";
+import Demographics from "~/components/Demographics";
 export default {
   metaInfo: {
     title: "HSS Website Redesign Survey Results"
   },
   components: {
     "general-section": General,
-    "accessibility-section": Accessibility,
+    "accessibility-section": AccessibilitySection,
     "user-experience-section": UserExperience,
     "other-websites-section": OtherWebsites,
     "demographics-section": Demographics
@@ -30,10 +30,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.title {
-  text-align: center;
-}
+<style lang="scss" scoped>
 .graph {
   &__container {
     display: flex;

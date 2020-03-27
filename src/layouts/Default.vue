@@ -1,6 +1,20 @@
 <template>
-  <div class="layout">
-    <slot />
+  <div>
+    <header class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1">
+            HSS Website Redesign Survey Results
+          </h1>
+          <h2 class="subtitle">
+            A New Era for the History of Science
+          </h2>
+        </div>
+      </div>
+    </header>
+    <main class="section">
+      <slot />
+    </main>
   </div>
 </template>
 

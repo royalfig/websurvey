@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <h2>General</h2>
+  <section class="container">
+    <h2 class="title is-2">General</h2>
   </section>
 </template>
 
