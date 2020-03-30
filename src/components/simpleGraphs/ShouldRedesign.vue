@@ -17,6 +17,7 @@ query {
           chartOptions {
             chart {
               type
+              height
               fontFamily
             }
             labels

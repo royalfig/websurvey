@@ -19,15 +19,17 @@ module.exports = class pieGraph {
       chartOptions: {
         chart: {
           type: "pie",
+          height: "300",
           fontFamily:
             "Roboto,-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, sans-serif"
         },
         labels: this.uniqueOptionsSorted,
         title: {
-          text: this.name
+          text: this.name,
+          align: "center"
         },
         legend: {
-          position: "top",
+          position: "bottom",
           horizontalAlign: "center"
         }
       }

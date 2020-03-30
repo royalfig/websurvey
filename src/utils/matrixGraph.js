@@ -107,7 +107,8 @@ module.exports = class MatrixGraph {
         colors: ["#fff"]
       },
       title: {
-        text: this.name
+        text: this.name,
+        align: "center"
       },
       xaxis: {
         categories: this.uniqueKeys

@@ -10,6 +10,7 @@ const path = require("path");
 const MatrixGraph = require(path.join(__dirname, "/src/utils/MatrixGraph"));
 const SimpleGraph = require(path.join(__dirname, "/src/utils/SimpleGraph"));
 const PieGraph = require(path.join(__dirname, "/src/utils/PieGraph"));
+const CheckBoxData = require(path.join(__dirname, "/src/utils/CheckboxData"));
 
 module.exports = function(api) {
   const websurveyID =
@@ -64,16 +65,30 @@ module.exports = function(api) {
       ).configObject,
       membershipStatus: new PieGraph(allData, "88080962", "Membership Status")
         .configObject,
-      visitedPages: new MatrixGraph(allData, "85042495", "Visited Pages")
-        .configObject,
-      helpfulPages: new MatrixGraph(allData, "85498946", "Helpful Pages")
-        .configObject,
-      helpfulFeatures: new MatrixGraph(allData, "85499867", "Useful Pages")
-        .configObject,
+      visitedPages: new MatrixGraph(
+        allData,
+        "85042495",
+        "Which pages do you visit?"
+      ).configObject,
+      helpfulPages: new MatrixGraph(
+        allData,
+        "85498946",
+        "Which pages are useful?"
+      ).configObject,
+      helpfulFeatures: new MatrixGraph(
+        allData,
+        "85499867",
+        "Which features are useful?"
+      ).configObject,
       accessibility: new MatrixGraph(
         allData,
         "88133257",
         "How accessible is the HSS website?"
+      ).configObject,
+      device: new CheckBoxData(
+        allData,
+        "85495109",
+        "How do you access the HSS website?"
       ).configObject
     });
   });

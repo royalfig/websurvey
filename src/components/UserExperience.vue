@@ -5,6 +5,9 @@
       <hr />
       <h3 class="title is-3">Site Visits</h3>
       <div class="box">
+        <device-graph />
+      </div>
+      <div class="box">
         <visited-pages-graph />
       </div>
       <h3 class="title is-3">Site Experience</h3>
@@ -19,11 +22,13 @@
 </template>
 
 <script>
+import Device from "~/components/simpleGraphs/Device.vue";
 import VisitedPages from "~/components/matrixGraphs/VisitedPages";
 import HelpfulPages from "~/components/matrixGraphs/HelpfulPages";
 import HelpfulFeatures from "~/components/matrixGraphs/HelpfulFeatures";
 export default {
   components: {
+    "device-graph": Device,
     "visited-pages-graph": VisitedPages,
     "helpful-pages-graph": HelpfulPages,
     "helpful-features-graph": HelpfulFeatures

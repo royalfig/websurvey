@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <apexchart
-      type="pie"
-      height="300"
-      :options="$static.data.edges[0].node.websiteImportance.chartOptions"
-      :series="$static.data.edges[0].node.websiteImportance.series"
-    />
-  </div>
+  <apexchart
+    height="300"
+    type="pie"
+    :options="$static.data.edges[0].node.device.chartOptions"
+    :series="$static.data.edges[0].node.device.series"
+  />
 </template>
 
 <static-query>
@@ -14,12 +12,11 @@ query {
   data: allGraphData {
     edges {
       node {
-        websiteImportance {
-          series
+        device {
+          series 
           chartOptions {
             chart {
               type
-              height
               fontFamily
             }
             labels

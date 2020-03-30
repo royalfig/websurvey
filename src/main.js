@@ -12,4 +12,9 @@ export default function(Vue, { router, head, isClient }) {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css?family=Roboto"
   });
+  head.link.push({
+    rel: "stylesheet",
+    href:
+      "https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css"
+  });
 }

@@ -38,6 +38,7 @@ query {
             }
             title {
               text
+              align
             }
             xaxis {
               categories
