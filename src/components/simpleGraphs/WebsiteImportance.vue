@@ -1,11 +1,11 @@
 <template>
   <div>
-    <apexcharts
-      type="bar"
-      height="350"
+    <apexchart
+      type="pie"
+      height="300"
       :options="$static.data.edges[0].node.websiteImportance.chartOptions"
       :series="$static.data.edges[0].node.websiteImportance.series"
-    ></apexcharts>
+    />
   </div>
 </template>
 
@@ -15,40 +15,19 @@ query {
     edges {
       node {
         websiteImportance {
-          series {
-            name
-            data
-          }
+          series
           chartOptions {
             chart {
               type
-              height
-              stacked
-              stackType
               fontFamily
             }
-            plotOptions {
-              bar {
-                horizontal
-              }
-            }
-            stroke {
-              width
-              colors
-            }
+            labels
             title {
               text
-            }
-            xaxis {
-              categories
-            }
-            fill {
-              opacity
             }
             legend {
               position
               horizontalAlign
-              offsetX
             }
           }
         }

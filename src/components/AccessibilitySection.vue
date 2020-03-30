@@ -1,7 +1,11 @@
 <template>
-  <section class="container">
-    <h2 class="title is-2">Accessibility</h2>
-    <accessibility-chart />
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2">Accessibility</h2>
+      <div class="box">
+        <accessibility-chart />
+      </div>
+    </div>
   </section>
 </template>
 

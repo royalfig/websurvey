@@ -1,16 +1,15 @@
 <template>
-  <div>
+  <div class="has-background-white-ter">
     <header class="hero is-medium is-primary is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-1">
-            HSS Website Redesign Survey Results
-          </h1>
+          <h1 class="title is-1">HSS Website Redesign Survey Results</h1>
           <h2 class="subtitle">
             Finding the Future for
-            <a href="https://hssonline.org" class="is-family-monospace"
-              >hssonline.org</a
-            >
+            <a
+              href="https://hssonline.org"
+              class="is-family-monospace"
+            >hssonline.org</a>
           </h2>
         </div>
       </div>

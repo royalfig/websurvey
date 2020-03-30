@@ -1,7 +1,5 @@
 <template>
   <Layout>
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-
     <general-section />
     <accessibility-section />
     <user-experience-section />

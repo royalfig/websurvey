@@ -1,4 +1,4 @@
-module.exports = class simpleGraph {
+module.exports = class pieGraph {
   constructor(data, filter, name) {
     this.filteredData = data.filter(item => item.data[filter]);
     this.name = name;
@@ -14,10 +14,18 @@ module.exports = class simpleGraph {
       return count;
     });
     this.configObject = {
-      name: this.name,
-      labels: this.aggregatedData,
-      series: [{ name: this.name, data: this.aggregatedData }],
-      categories: this.uniqueOptions
+      series: this.aggregatedData,
+      chartOptions: {
+        chart: {
+          type: "pie",
+          fontFamily:
+            "Roboto,-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, sans-serif"
+        },
+        labels: this.uniqueOptions,
+        title: {
+          text: this.name
+        }
+      }
     };
   }
 };

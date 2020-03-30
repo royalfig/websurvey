@@ -1,11 +1,11 @@
 <template>
   <div>
-    <apexcharts
+    <apexchart
       type="bar"
       height="350"
       :options="$static.data.edges[0].node.accessibility.chartOptions"
       :series="$static.data.edges[0].node.accessibility.series"
-    ></apexcharts>
+    />
   </div>
 </template>
 
@@ -63,7 +63,7 @@ import VueApexCharts from "vue-apexcharts";
 
 export default {
   components: {
-    apexcharts: VueApexCharts
+    apexchart: VueApexCharts
   }
 };
 </script>

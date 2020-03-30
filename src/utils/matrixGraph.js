@@ -50,6 +50,10 @@ module.exports = class MatrixGraph {
       ];
     }
 
+    if (this.uniqueProps.includes("Frequently")) {
+      return ["Frequently", "Sometimes", "Never"];
+    }
+
     return this.uniqueProps.sort();
   }
 

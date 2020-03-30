@@ -7,8 +7,9 @@
 const axios = require("axios");
 require("dotenv").config();
 const path = require("path");
-const MatrixGraph = require(path.join(__dirname, "/src/utils/matrixGraph"));
+const MatrixGraph = require(path.join(__dirname, "/src/utils/MatrixGraph"));
 const SimpleGraph = require(path.join(__dirname, "/src/utils/SimpleGraph"));
+const PieGraph = require(path.join(__dirname, "/src/utils/PieGraph"));
 
 module.exports = function(api) {
   const websurveyID =
@@ -46,34 +47,34 @@ module.exports = function(api) {
     const graphData = actions.addCollection({ typeName: "graphData" });
 
     graphData.addNode({
-      age: new SimpleGraph(allData, "87436962", "Respondent Age").configObject,
-      websiteImportance: new SimpleGraph(
+      age: new PieGraph(allData, "87436962", "Respondent Age").configObject,
+      websiteImportance: new PieGraph(
         allData,
         "85042330",
-        "Website Importance"
+        "How important is the HSS website?"
       ).configObject,
-      socialMedia: new SimpleGraph(allData, "85500080", "Social Media")
+      socialMedia: new PieGraph(allData, "85500080", "HSS social media")
         .configObject,
-      compBenefit: new SimpleGraph(
-        allData,
-        "85499617",
-        "Companion Piece Benefit"
-      ).configObject,
-      shouldRedesign: new SimpleGraph(allData, "85041895", "Redesign Sentiment")
+      compBenefit: new PieGraph(allData, "85499617", "Companion Piece Benefit")
         .configObject,
-      membershipStatus: new SimpleGraph(
+      shouldRedesign: new PieGraph(
         allData,
-        "88080962",
-        "Membership Status"
+        "85041895",
+        "Should the HSS redesign its website?"
       ).configObject,
+      membershipStatus: new PieGraph(allData, "88080962", "Membership Status")
+        .configObject,
       visitedPages: new MatrixGraph(allData, "85042495", "Visited Pages")
         .configObject,
       helpfulPages: new MatrixGraph(allData, "85498946", "Helpful Pages")
         .configObject,
       helpfulFeatures: new MatrixGraph(allData, "85499867", "Useful Pages")
         .configObject,
-      accessibility: new MatrixGraph(allData, "88133257", "Accessibility")
-        .configObject
+      accessibility: new MatrixGraph(
+        allData,
+        "88133257",
+        "How accessible is the HSS website?"
+      ).configObject
     });
   });
 
