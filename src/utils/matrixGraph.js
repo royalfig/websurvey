@@ -5,13 +5,13 @@ module.exports = class MatrixGraph {
     this.totalItems = this.filteredData.map(item => item.data[filter].value);
     this.convertedToArray = this.totalItems.join("\n").split(/\n/);
     this.uniqueKeys = [
-      ...new Set(this.convertedToArray.map(x => x.match(/([A-Za-z& ]+)/)[0]))
+      ...new Set(this.convertedToArray.map(key => this.getKey(key)))
     ];
     this.uniqueKeysSorted = this.uniqueKeys.sort();
     this.uniqueProps = [
-      ...new Set(this.convertedToArray.map(x => x.match(/[/A-Za-z ]+$/)[0]))
+      ...new Set(this.convertedToArray.map(prop => this.getProp(prop)))
     ];
-    this.uniquePropsSorted = this.uniqueProps.sort();
+    this.uniquePropsSorted = this.sortProps();
     this.keyArray = this.uniqueKeysSorted.map(x => {
       const obj = { type: x };
       return obj;
@@ -28,15 +28,42 @@ module.exports = class MatrixGraph {
   }
 
   //Methods
+  getProp(prop) {
+    return prop.match(/[/A-Za-z ]+$/)[0].trim();
+  }
+  getKey(key) {
+    return key.match(/([A-Za-z& ]+)/)[0].trim();
+  }
+
+  sortProps() {
+    if (this.uniqueProps.includes("Very Useful")) {
+      return ["Very Useful", "Somewhat Useful", "Not Useful", "N/A"];
+    }
+
+    if (this.uniqueProps.includes("Strongly Agree")) {
+      return [
+        "Strongly Agree",
+        "Agree",
+        "Neutral",
+        "Disagree",
+        "Strongly Disagree"
+      ];
+    }
+
+    return this.uniqueProps.sort();
+  }
+
   getSeries() {
+    // Modify in place
     this.keyArray.map(x => {
       this.propArray.map(y => {
         Object.assign(x, y);
       });
     });
+
     this.convertedToArray.forEach(x => {
-      const key = x.match(/([A-Za-z& ]+)/)[0];
-      const prop = x.match(/[/A-Za-z ]+$/)[0];
+      const key = this.getKey(x);
+      const prop = this.getProp(x);
       this.keyArray.forEach(y => {
         if (y.type === key) {
           y[prop]++;
@@ -44,7 +71,7 @@ module.exports = class MatrixGraph {
       });
     });
 
-    const series = this.uniqueProps.map(x => {
+    const series = this.uniquePropsSorted.map(x => {
       const name = x;
       const data = [];
       this.keyArray.forEach(y => {
@@ -52,6 +79,7 @@ module.exports = class MatrixGraph {
       });
       return { name: name, data: data };
     });
+
     return series;
   }
 
@@ -63,7 +91,7 @@ module.exports = class MatrixGraph {
         stacked: true,
         stackType: "100%",
         fontFamily:
-          "-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, sans-serif"
+          "Roboto,-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, sans-serif"
       },
       plotOptions: {
         bar: {

@@ -6,7 +6,6 @@
       :options="$static.data.edges[0].node.accessibility.chartOptions"
       :series="$static.data.edges[0].node.accessibility.series"
     ></apexcharts>
-    <!-- <p>{{ series }}</p> -->
   </div>
 </template>
 

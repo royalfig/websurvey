@@ -7,7 +7,10 @@
             HSS Website Redesign Survey Results
           </h1>
           <h2 class="subtitle">
-            A New Era for the History of Science
+            Finding the Future for
+            <a href="https://hssonline.org" class="is-family-monospace"
+              >hssonline.org</a
+            >
           </h2>
         </div>
       </div>
@@ -26,26 +29,11 @@ query {
 }
 </static-query>
 
-<style>
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  background-color: #eff4f7;
-  /* color: #ffffff;
-  background-color: #343f57; */
-}
+<style lang="scss">
+@import "bulma/sass/utilities/_all";
+$family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-.layout {
-  max-width: 750px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
+@import "bulma";
+@import "buefy/src/scss/buefy";
 </style>
