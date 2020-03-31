@@ -1,7 +1,7 @@
 <template>
   <apexchart
-    height="250"
-    type="bar"
+    height="300"
+    type="pie"
     :options="$static.data.edges[0].node.age.chartOptions"
     :series="$static.data.edges[0].node.age.series"
   />
@@ -13,9 +13,22 @@ query {
     edges {
       node {
         age {
-          title
-          categories
-          series
+          series 
+          chartOptions {
+            chart {
+              type
+              height
+              fontFamily
+            }
+            labels
+            title {
+              text
+            }
+            legend {
+              position
+              horizontalAlign
+            }
+          }
         }
       }
     }

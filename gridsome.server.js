@@ -54,10 +54,16 @@ module.exports = function(api) {
         "85042330",
         "How important is the HSS website?"
       ).configObject,
-      socialMedia: new PieGraph(allData, "85500080", "HSS social media")
-        .configObject,
-      compBenefit: new PieGraph(allData, "85499617", "Companion Piece Benefit")
-        .configObject,
+      socialMedia: new PieGraph(
+        allData,
+        "85500080",
+        "HSS social media presence"
+      ).configObject,
+      compBenefit: new PieGraph(
+        allData,
+        "85499617",
+        "Would you benefit from a site that published essays and/or blog posts on digital and other resources"
+      ).configObject,
       shouldRedesign: new PieGraph(
         allData,
         "85041895",
@@ -85,10 +91,29 @@ module.exports = function(api) {
         "88133257",
         "How accessible is the HSS website?"
       ).configObject,
+      otherFeatures: new CheckBoxData(
+        allData,
+        "85499428",
+        "Which features do you find useful on other websites",
+        "bar"
+      ).configObject,
       device: new CheckBoxData(
         allData,
         "85495109",
-        "How do you access the HSS website?"
+        "How do you access the HSS website?",
+        "pie"
+      ).configObject,
+      resemble: new CheckBoxData(
+        allData,
+        "85499281",
+        "Which websites do you wish HSS most resembled?",
+        "bar"
+      ).configObject,
+      employmentStatus: new CheckBoxData(
+        allData,
+        "85500947",
+        "Employment Status",
+        "pie"
       ).configObject
     });
   });

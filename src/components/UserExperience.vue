@@ -17,6 +17,9 @@
       <div class="box">
         <helpful-features-graph />
       </div>
+      <div class="box">
+        <comp-benefit-graph />
+      </div>
     </div>
   </section>
 </template>
@@ -26,12 +29,14 @@ import Device from "~/components/simpleGraphs/Device.vue";
 import VisitedPages from "~/components/matrixGraphs/VisitedPages";
 import HelpfulPages from "~/components/matrixGraphs/HelpfulPages";
 import HelpfulFeatures from "~/components/matrixGraphs/HelpfulFeatures";
+import CompBenefit from "~/components/simpleGraphs/CompBenefit";
 export default {
   components: {
     "device-graph": Device,
     "visited-pages-graph": VisitedPages,
     "helpful-pages-graph": HelpfulPages,
-    "helpful-features-graph": HelpfulFeatures
+    "helpful-features-graph": HelpfulFeatures,
+    "comp-benefit-graph": CompBenefit
   }
 };
 </script>

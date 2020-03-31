@@ -52,6 +52,10 @@ module.exports = class pieGraph {
       ];
     }
 
+    if (this.uniqueOptions.includes("Maybe")) {
+      return ["Yes", "Maybe", "No"];
+    }
+
     if (this.uniqueOptions.includes("Increase and expand to other platforms")) {
       return [
         "Increase and expand to other platforms",

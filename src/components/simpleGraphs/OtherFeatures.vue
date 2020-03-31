@@ -1,9 +1,9 @@
 <template>
   <apexchart
-    type="pie"
-    height="300"
-    :options="$static.data.edges[0].node.compBenefit.chartOptions"
-    :series="$static.data.edges[0].node.compBenefit.series"
+    type="bar"
+    height="350"
+    :options="$static.data.edges[0].node.otherFeatures.chartOptions"
+    :series="$static.data.edges[0].node.otherFeatures.series"
   />
 </template>
 
@@ -12,21 +12,30 @@ query {
   data: allGraphData {
     edges {
       node {
-        compBenefit {
-          series
+        otherFeatures {
+          series {
+            data
+          }
           chartOptions {
             chart {
               type
-              height
               fontFamily
             }
-            labels
             title {
               text
+              align
             }
             legend {
               position
               horizontalAlign
+            }
+            plotOptions {
+              bar {
+                horizontal
+              }
+            }
+            xaxis {
+              categories
             }
           }
         }
