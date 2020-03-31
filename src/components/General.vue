@@ -1,11 +1,16 @@
 <template>
   <section class="section">
     <div class="container">
-      <h2 class="title is-2">General</h2>
+      <h2 id="general" class="title is-2">General</h2>
       <div class="columns">
         <div class="column">
           <p class="title is-3">Title</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit reiciendis dolores eum magni cupiditate odio velit nobis facilis? Rerum eum provident quos fuga quisquam atque quae saepe magnam nulla eius.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+            reiciendis dolores eum magni cupiditate odio velit nobis facilis?
+            Rerum eum provident quos fuga quisquam atque quae saepe magnam nulla
+            eius.
+          </p>
         </div>
         <div class="column">
           <div class="box">

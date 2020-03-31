@@ -93,7 +93,7 @@ module.exports = class MatrixGraph {
         type: "bar",
         height: 350,
         stacked: true,
-        stackType: "100%",
+        stackType: "normal",
         fontFamily:
           "Roboto,-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, sans-serif"
       },

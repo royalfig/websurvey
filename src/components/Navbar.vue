@@ -1,17 +1,23 @@
 <template>
-  <b-navbar class="is-primary">
+  <b-navbar class="is-primary" :fixed-top="true">
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <g-image class="image" src="~/assets/logo.png" width="500" alt="HSS logo" />
+        <g-image
+          class="image"
+          src="~/assets/logo.png"
+          width="500"
+          alt="HSS logo"
+        />
       </b-navbar-item>
     </template>
 
     <template slot="start">
-      <b-navbar-item href="#">Home</b-navbar-item>
+      <b-navbar-item :active="true" href="#">Home</b-navbar-item>
       <b-navbar-item href="#">About</b-navbar-item>
       <b-navbar-dropdown label="Results">
-        <b-navbar-item href="#">General</b-navbar-item>
+        <b-navbar-item href="#general">General</b-navbar-item>
         <b-navbar-item href="#">Accessibility</b-navbar-item>
+        <b-navbar-item href="#demographics">Demographics</b-navbar-item>
       </b-navbar-dropdown>
     </template>
 

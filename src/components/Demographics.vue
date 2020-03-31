@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <h2 class="title is-2">Demographics</h2>
+      <h2 id="demographics" class="title is-2">Demographics</h2>
       <div class="columns">
         <div class="column">
           <p class="title is-3">Why we collect demographic data</p>
@@ -65,6 +65,10 @@
             <employment-status-graph />
           </div>
         </div>
+      </div>
+      <div class="box">
+        <p class="title is-4">Country of Residence</p>
+        <country-residence />
       </div>
     </div>
   </section>
