@@ -9,6 +9,7 @@
   "dependencies": {
     "apexcharts": "^3.17.0",
     "buefy": "^0.8.13",
+    "emoji-flags": "^1.2.0",
     "gridsome": "^0.7.13",
     "vue-apexcharts": "^1.5.2"
   },

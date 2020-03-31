@@ -1,4 +1,4 @@
-module.exports = class pieGraph {
+module.exports = class PieGraph {
   constructor(data, filter, name) {
     this.filteredData = data.filter(item => item.data[filter]);
     this.name = name;

@@ -11,6 +11,7 @@ const MatrixGraph = require(path.join(__dirname, "/src/utils/MatrixGraph"));
 const SimpleGraph = require(path.join(__dirname, "/src/utils/SimpleGraph"));
 const PieGraph = require(path.join(__dirname, "/src/utils/PieGraph"));
 const CheckBoxData = require(path.join(__dirname, "/src/utils/CheckboxData"));
+const Country = require(path.join(__dirname, "/src/utils/Country"));
 
 module.exports = function(api) {
   const websurveyID =
@@ -48,7 +49,7 @@ module.exports = function(api) {
     const graphData = actions.addCollection({ typeName: "graphData" });
 
     graphData.addNode({
-      age: new PieGraph(allData, "87436962", "Respondent Age").configObject,
+      age: new PieGraph(allData, "87436962", "Age").configObject,
       websiteImportance: new PieGraph(
         allData,
         "85042330",
@@ -114,7 +115,10 @@ module.exports = function(api) {
         "85500947",
         "Employment Status",
         "pie"
-      ).configObject
+      ).configObject,
+      country: new Country(allData, "87436804", "Country of Residence")
+        .configObject,
+      flags: new Country(allData, "87436804", "Country of Residence").flagCount
     });
   });
 

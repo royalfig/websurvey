@@ -33,7 +33,18 @@ export default {
 @import "bulma/sass/utilities/_all";
 $family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$primary: #666633;
+$primary-invert: findColorInvert($primary);
 
+$colors: (
+  "primary": (
+    $primary,
+    $primary-invert
+  )
+);
+.box {
+  height: 100%;
+}
 @import "bulma";
 @import "buefy/src/scss/buefy";
 </style>
