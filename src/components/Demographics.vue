@@ -66,6 +66,18 @@
           </div>
         </div>
       </div>
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <gender-graph />
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <race-graph />
+          </div>
+        </div>
+      </div>
       <div class="box">
         <p class="title is-4">Country of Residence</p>
         <country-residence />
@@ -78,12 +90,16 @@
 import Age from "~/components/simpleGraphs/Age";
 import EmploymentStatus from "~/components/simpleGraphs/EmploymentStatus";
 import MembershipStatus from "~/components/simpleGraphs/MembershipStatus";
+import Gender from "~/components/simpleGraphs/Gender";
+import Race from "~/components/simpleGraphs/Race";
 import Flags from "~/components/Flags";
 export default {
   components: {
     "age-graph": Age,
     "employment-status-graph": EmploymentStatus,
     "membership-status": MembershipStatus,
+    "gender-graph": Gender,
+    "race-graph": Race,
     "country-residence": Flags
   }
 };

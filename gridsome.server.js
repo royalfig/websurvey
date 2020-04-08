@@ -12,6 +12,8 @@ const SimpleGraph = require(path.join(__dirname, "/src/utils/SimpleGraph"));
 const PieGraph = require(path.join(__dirname, "/src/utils/PieGraph"));
 const CheckBoxData = require(path.join(__dirname, "/src/utils/CheckboxData"));
 const Country = require(path.join(__dirname, "/src/utils/Country"));
+const StandardPie = require(path.join(__dirname, "/src/utils/StandardPie"));
+const Comments = require(path.join(__dirname, "src/utils/Comments"));
 
 module.exports = function(api) {
   const websurveyID =
@@ -118,7 +120,36 @@ module.exports = function(api) {
       ).configObject,
       country: new Country(allData, "87436804", "Country of Residence")
         .configObject,
-      flags: new Country(allData, "87436804", "Country of Residence").flagCount
+      flags: new Country(allData, "87436804", "Country of Residence").flagCount,
+      gender: new StandardPie(allData, "85500948", "Gender").configObject,
+      race: new StandardPie(allData, "85500950", "Race and/or Ethnicity")
+        .configObject,
+      redesignNegComment: new Comments(allData, "85495096", "Negative")
+        .totalItems,
+      redesignPosComment: new Comments(allData, "85495101", "Positive")
+        .totalItems,
+      redesignNeuComment: new Comments(allData, "85496788", "Positive")
+        .totalItems,
+      redesignComments: [
+        {
+          label: "Positive",
+          content: new Comments(allData, "85495101", "Positive").totalItems
+        },
+        {
+          label: "Neutral",
+          content: new Comments(allData, "85496788", "Neutral").totalItems
+        },
+        {
+          label: "Negative",
+
+          content: new Comments(allData, "85495096", "Negative").totalItems
+        }
+      ],
+      accessibilityComment: new Comments(
+        allData,
+        "88133388",
+        "Accessibility Comments"
+      ).totalItems
     });
   });
 

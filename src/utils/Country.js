@@ -3,19 +3,20 @@ const emojiFlags = require("emoji-flags");
 module.exports = class CountryGraph {
   constructor(data, filter, name) {
     this.name = name;
-
-    this.countries = [
-      "Other: US",
-      "Other: USA",
-      "Other: Canada",
-      "Prefer not to answer"
-    ];
     this.filteredData = data.filter(item => item.data[filter]);
     this.totalItems = this.filteredData.map(item => item.data[filter].value);
     this.countriesWithoutOther = this.totalItems.map(country =>
       country.replace("Other: ", "").replace(/USA?/i, "United States")
     );
-    this.preferNotObj = { name: "Prefer not to answer", emoji: "⭕" };
+    this.preferNotObj = {
+      name: "Prefer not to answer",
+      emoji: "⭕",
+      title: null,
+      unicode: null,
+      title: null,
+      code: null
+    };
+
     this.countryEmojis = this.countriesWithoutOther.map(country => {
       if (country !== "Prefer not to answer") {
         const index = emojiFlags.names.findIndex(
@@ -23,9 +24,12 @@ module.exports = class CountryGraph {
         );
         return emojiFlags.data[index];
       }
+
       return this.preferNotObj;
     });
+
     this.uniqueEmojis = [...new Set(this.countryEmojis)];
+
     this.countriesCounted = this.uniqueEmojis.map(item => {
       item.count = 0;
       this.countryEmojis.map(item2 => {
@@ -35,6 +39,7 @@ module.exports = class CountryGraph {
       });
       return item;
     });
+
     this.countriesCountedAndSorted = this.countriesCounted.sort((a, b) =>
       a.name > b.name ? 1 : -1
     );

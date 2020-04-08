@@ -31,6 +31,11 @@
           </div>
         </div>
       </div>
+      <p class="title is-3">Comments on Redesign</p>
+
+      <div class="box">
+        <redesign-comments />
+      </div>
     </div>
   </section>
 </template>
@@ -39,13 +44,19 @@
 import WebsiteImportance from "~/components/simpleGraphs/WebsiteImportance";
 import SocialMedia from "~/components/simpleGraphs/SocialMedia";
 import ShouldRedesign from "~/components/simpleGraphs/ShouldRedesign";
+import RedesignComments from "~/components/RedesignComments";
 export default {
   components: {
     "website-importance-graph": WebsiteImportance,
     "should-redesign-graph": ShouldRedesign,
-    "social-media-graph": SocialMedia
+    "social-media-graph": SocialMedia,
+    RedesignComments
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.response__header {
+  padding: 1rem 0;
+}
+</style>

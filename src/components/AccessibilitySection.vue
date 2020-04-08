@@ -5,15 +5,21 @@
       <div class="box">
         <accessibility-chart />
       </div>
+      <p class="title is-3">Comments on Accessibility</p>
+      <div class="box">
+        <access-comment />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Accessibility from "~/components/matrixGraphs/Accessibility";
+import AccessComment from "~/components/AccessComment";
 export default {
   components: {
-    "accessibility-chart": Accessibility
+    "accessibility-chart": Accessibility,
+    AccessComment
   }
 };
 </script>
