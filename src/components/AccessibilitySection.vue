@@ -5,8 +5,8 @@
       <div class="box">
         <accessibility-chart />
       </div>
-      <p class="title is-3">Comments on Accessibility</p>
       <div class="box">
+        <p class="title is-3">Comments on Accessibility</p>
         <access-comment />
       </div>
     </div>

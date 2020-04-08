@@ -132,7 +132,7 @@ module.exports = function(api) {
         .totalItems,
       redesignComments: [
         {
-          label: "Positive",
+          label: "Yes",
           content: new Comments(allData, "85495101", "Positive").totalItems
         },
         {
@@ -140,7 +140,7 @@ module.exports = function(api) {
           content: new Comments(allData, "85496788", "Neutral").totalItems
         },
         {
-          label: "Negative",
+          label: "No",
 
           content: new Comments(allData, "85495096", "Negative").totalItems
         }
@@ -149,7 +149,27 @@ module.exports = function(api) {
         allData,
         "88133388",
         "Accessibility Comments"
-      ).totalItems
+      ).totalItems,
+      wishFulfillment: new Comments(
+        allData,
+        "85499050",
+        "Wish Fulfillment Comments"
+      ).totalItems,
+      visitedPagesComment: new Comments(
+        allData,
+        "85498998",
+        "Wish Fulfillment Comments"
+      ).totalItems,
+      useComments: [
+        {
+          label: "Useful",
+          content: new Comments(allData, "85499704", "Useful").totalItems
+        },
+        {
+          label: "Not Useful",
+          content: new Comments(allData, "85499837", "Not Useful").totalItems
+        }
+      ]
     });
   });
 

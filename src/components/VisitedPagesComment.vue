@@ -2,7 +2,7 @@
   <section>
     <b-tabs v-model="activeTab" :multiline="multiline">
       <template
-        v-for="(tab, index) in $static.data.edges[0].node.accessibilityComment"
+        v-for="(tab, index) in $static.data.edges[0].node.visitedPagesComment"
       >
         <b-tab-item :key="index" :label="index + 1">
           <div class="content">
@@ -21,7 +21,7 @@ query {
   data: allGraphData {
     edges {
       node {
-        accessibilityComment 
+        visitedPagesComment 
         }
       }
     }
@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       activeTab: 0,
-
       multiline: true
     };
   }

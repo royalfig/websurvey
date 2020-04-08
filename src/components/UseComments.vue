@@ -1,14 +1,14 @@
 <template>
   <section>
     <b-tabs v-model="activeTab" :multiline="multiline">
-      <template
-        v-for="(tab, index) in $static.data.edges[0].node.accessibilityComment"
-      >
-        <b-tab-item :key="index" :label="index + 1">
+      <template v-for="(tab, index) in $static.data.edges[0].node.useComments">
+        <b-tab-item :key="index" :label="tab.label">
           <div class="content">
-            <p>
-              {{ tab }}
-            </p>
+            <ul>
+              <li v-for="(i, idx) in tab.content" :key="idx">
+                {{ i }}
+              </li>
+            </ul>
           </div>
         </b-tab-item>
       </template>
@@ -21,7 +21,10 @@ query {
   data: allGraphData {
     edges {
       node {
-        accessibilityComment 
+        useComments {
+          label
+          content
+        }
         }
       }
     }
@@ -34,7 +37,6 @@ export default {
   data() {
     return {
       activeTab: 0,
-
       multiline: true
     };
   }

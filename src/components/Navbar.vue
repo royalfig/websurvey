@@ -24,13 +24,13 @@
     <template slot="end">
       <b-navbar-item tag="div">
         <div class="buttons">
-          <a class="button is-dark">
+          <a class="button is-danger">
             <b-icon icon="heart" size="is-small" />
-            <strong>Donate</strong>
+            <span><strong>Donate</strong></span>
           </a>
           <a class="button is-light">
-            <b-icon icon="clipboard-text" />
-            <strong>Take the Survey</strong>
+            <b-icon icon="clipboard-text" size="is-small" />
+            <span><strong>Take the Survey</strong></span>
           </a>
         </div>
       </b-navbar-item>

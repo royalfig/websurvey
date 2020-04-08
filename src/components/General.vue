@@ -1,16 +1,24 @@
 <template>
   <section class="section">
     <div class="container">
-      <h2 id="general" class="title is-2">General</h2>
+      <h2 id="general" class="title is-2">HSS Website Redesign</h2>
       <div class="columns">
         <div class="column">
-          <p class="title is-3">Title</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            reiciendis dolores eum magni cupiditate odio velit nobis facilis?
-            Rerum eum provident quos fuga quisquam atque quae saepe magnam nulla
-            eius.
-          </p>
+          <p class="title is-3">Baseline Responses</p>
+          <div class="content">
+            <p>
+              HSS websites represent one of the primary conduits for the
+              organization to achieve its mission of fostering interest in the
+              history of science.
+            </p>
+            <p>
+              The results of this website redesign survey are intended to
+              determine whether these websites are successful in fulfilling this
+              goal and to gauge what could be done to better serve the
+              organization's members and the history of science community more
+              widely.
+            </p>
+          </div>
         </div>
         <div class="column">
           <div class="box">
@@ -31,9 +39,8 @@
           </div>
         </div>
       </div>
-      <p class="title is-3">Comments on Redesign</p>
-
       <div class="box">
+        <p class="title is-3">The HSS should redesign its website...</p>
         <redesign-comments />
       </div>
     </div>

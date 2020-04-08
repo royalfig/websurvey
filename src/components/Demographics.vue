@@ -16,20 +16,24 @@
           </p>
         </div>
         <div class="column">
-          <p>
-            We are cautious of the exploitation enabled by demographic data
-            collection. Therefore, we are committed to collecting information in
-            a manner that is voluntary, promotes self-description, and is
-            purposeful. The information will be used by the program co-chairs to
-            guide their construction of the program with the goal of achieving
-            balance in demographic characteristics and maximizing
-            representativeness among the society’s communities.
-          </p>
-          <p>
-            The structure of this questionnaire is still in a pilot phase. We
-            welcome your feedback via our contact form.
-          </p>
-          <p>–Committee on Diversity and Inclusion</p>
+          <div class="content">
+            <p>
+              We are cautious of the exploitation enabled by demographic data
+              collection. Therefore, we are committed to collecting information
+              in a manner that is voluntary, promotes self-description, and is
+              purposeful. The information will be used by the program co-chairs
+              to guide their construction of the program with the goal of
+              achieving balance in demographic characteristics and maximizing
+              representativeness among the society’s communities.
+            </p>
+            <p>
+              The structure of HSS demographic questions are still in a pilot
+              phase. We welcome your feedback via our contact form.
+            </p>
+            <p class="has-text-right">
+              &mdash;Committee on Diversity and Inclusion
+            </p>
+          </div>
         </div>
       </div>
       <div class="columns">
