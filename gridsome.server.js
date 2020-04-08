@@ -7,12 +7,12 @@
 const axios = require("axios");
 require("dotenv").config();
 const path = require("path");
-const MatrixGraph = require(path.join(__dirname, "/src/utils/MatrixGraph"));
-const SimpleGraph = require(path.join(__dirname, "/src/utils/SimpleGraph"));
-const PieGraph = require(path.join(__dirname, "/src/utils/PieGraph"));
-const CheckBoxData = require(path.join(__dirname, "/src/utils/CheckboxData"));
-const Country = require(path.join(__dirname, "/src/utils/Country"));
-const StandardPie = require(path.join(__dirname, "/src/utils/StandardPie"));
+const MatrixGraph = require(path.join(__dirname, "src/utils/MatrixGraph"));
+const SimpleGraph = require(path.join(__dirname, "src/utils/SimpleGraph"));
+const PieGraph = require(path.join(__dirname, "src/utils/PieGraph"));
+const CheckBoxData = require(path.join(__dirname, "src/utils/CheckboxData"));
+const Country = require(path.join(__dirname, "src/utils/Country"));
+const StandardPie = require(path.join(__dirname, "src/utils/StandardPie"));
 const Comments = require(path.join(__dirname, "src/utils/Comments"));
 
 module.exports = function(api) {
