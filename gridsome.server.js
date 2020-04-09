@@ -47,7 +47,7 @@ module.exports = function(api) {
     };
     const tempData = await forLoop();
     console.log(tempData);
-    const allData = tempData.flat();
+    const allData = tempData.reduce((acc, val) => tempData.concat(val), []);
     console.log(allData);
     const graphData = actions.addCollection({ typeName: "graphData" });
 
