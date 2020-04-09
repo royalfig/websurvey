@@ -43,8 +43,8 @@ module.exports = function(api) {
 
         totalData.push(submissions);
       }
-      console.log(totalData);
-      return totalData.flat();
+      const flatArray = totalData.flat();
+      return flatArray;
     };
 
     const allData = await forLoop();
