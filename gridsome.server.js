@@ -43,7 +43,7 @@ module.exports = function(api) {
 
         totalData.push(submissions);
       }
-
+      console.log(totalData);
       return totalData.flat();
     };
 
