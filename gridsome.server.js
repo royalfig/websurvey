@@ -40,14 +40,14 @@ module.exports = function(api) {
           },
           headers: { Authorization: "Bearer " + process.env.FORMSTACK_API }
         });
-
         totalData.push(submissions);
       }
 
-      return totalData;
+      const flattened = totalData => [].concat(...totalData);
+      return flattened;
     };
 
-    const allData = await forLoop().flat();
+    const allData = await forLoop();
     console.log(allData);
     const graphData = actions.addCollection({ typeName: "graphData" });
 
