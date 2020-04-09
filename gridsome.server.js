@@ -27,9 +27,8 @@ module.exports = function(api) {
       headers: { Authorization: "Bearer " + process.env.FORMSTACK_API }
     });
 
-    const totalData = [];
-
     const forLoop = async () => {
+      const totalData = [];
       for (let i = 1; i <= pages; i++) {
         const {
           data: { submissions }
@@ -42,11 +41,12 @@ module.exports = function(api) {
         });
         totalData.push(submissions);
       }
-
-      return totalData;
+      // const flat = totalData.reduce((acc, val) => totalData.concat(val), []);
+      return totalData.flat();
     };
-    const tempData = await forLoop();
-    const allData = tempData.reduce((acc, val) => tempData.concat(val), []);
+    const allData = await forLoop();
+    console.log(allData[0]);
+    // const allData = tempData.reduce((acc, val) => tempData.concat(val), []);
     const graphData = actions.addCollection({ typeName: "graphData" });
 
     graphData.addNode({
