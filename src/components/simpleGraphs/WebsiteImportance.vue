@@ -1,11 +1,13 @@
 <template>
   <div>
-    <apexchart
-      type="pie"
-      height="300"
-      :options="$static.data.edges[0].node.websiteImportance.chartOptions"
-      :series="$static.data.edges[0].node.websiteImportance.series"
-    />
+    <client-only>
+      <apexchart
+        type="pie"
+        height="300"
+        :options="$static.data.edges[0].node.websiteImportance.chartOptions"
+        :series="$static.data.edges[0].node.websiteImportance.series"
+      />
+    </client-only>
   </div>
 </template>
 
@@ -39,10 +41,9 @@ query {
 </static-query>
 
 <script>
-import VueApexCharts from "vue-apexcharts";
 export default {
   components: {
-    apexchart: VueApexCharts
+    Apexchart: () => import("vue-apexcharts")
   }
 };
 </script>

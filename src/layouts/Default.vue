@@ -5,8 +5,6 @@
 
     <main id="main" class="columns is-centered">
       <div class="column is-8">
-        <!-- <main id="main" class="">
-      <div class=""> -->
         <slot />
       </div>
     </main>

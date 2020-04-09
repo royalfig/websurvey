@@ -1,10 +1,12 @@
 <template>
-  <apexchart
-    type="pie"
-    height="300"
-    :options="$static.data.edges[0].node.socialMedia.chartOptions"
-    :series="$static.data.edges[0].node.socialMedia.series"
-  />
+  <client-only>
+    <apexchart
+      type="pie"
+      height="300"
+      :options="$static.data.edges[0].node.socialMedia.chartOptions"
+      :series="$static.data.edges[0].node.socialMedia.series"
+    />
+  </client-only>
 </template>
 
 <static-query>
@@ -37,10 +39,9 @@ query {
 </static-query>
 
 <script>
-import VueApexCharts from "vue-apexcharts";
 export default {
   components: {
-    apexchart: VueApexCharts
+    Apexchart: () => import("vue-apexcharts")
   }
 };
 </script>

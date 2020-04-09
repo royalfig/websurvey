@@ -7,13 +7,12 @@
 const axios = require("axios");
 require("dotenv").config();
 const path = require("path");
-const MatrixGraph = require(path.join(__dirname, "src/utils/MatrixGraph"));
-const SimpleGraph = require(path.join(__dirname, "src/utils/SimpleGraph"));
-const PieGraph = require(path.join(__dirname, "src/utils/PieGraph"));
-const CheckBoxData = require(path.join(__dirname, "src/utils/CheckboxData"));
-const Country = require(path.join(__dirname, "src/utils/Country"));
-const StandardPie = require(path.join(__dirname, "src/utils/StandardPie"));
-const Comments = require(path.join(__dirname, "src/utils/Comments"));
+const MatrixGraph = require("./src/utils/MatrixGraph");
+const PieGraph = require("./src/utils/PieGraph");
+const CheckBoxData = require("./src/utils/CheckboxData");
+const Country = require("./src/utils/Country");
+const StandardPie = require("./src/utils/StandardPie");
+const Comments = require("./src/utils/Comments");
 
 module.exports = function(api) {
   const websurveyID =
@@ -124,8 +123,8 @@ module.exports = function(api) {
       gender: new StandardPie(allData, "85500948", "Gender").configObject,
       race: new StandardPie(allData, "85500950", "Race and/or Ethnicity")
         .configObject,
-      redesignNegComment: new Comments(allData, "85495096", "Negative")
-        .totalItems,
+      // redesignNegComment: new Comments(allData, "85495096", "Negative")
+      //   .totalItems,
       redesignPosComment: new Comments(allData, "85495101", "Positive")
         .totalItems,
       redesignNeuComment: new Comments(allData, "85496788", "Positive")
@@ -138,11 +137,6 @@ module.exports = function(api) {
         {
           label: "Neutral",
           content: new Comments(allData, "85496788", "Neutral").totalItems
-        },
-        {
-          label: "No",
-
-          content: new Comments(allData, "85495096", "Negative").totalItems
         }
       ],
       accessibilityComment: new Comments(
