@@ -42,10 +42,11 @@ module.exports = function(api) {
         totalData.push(submissions);
       }
       // const flat = totalData.reduce((acc, val) => totalData.concat(val), []);
-      return totalData.flat();
+      const flat = totalData.reduce((acc, val) => acc.concat(val), []);
+      return flat;
     };
     const allData = await forLoop();
-    console.log(allData[0]);
+    // console.log(allData[0]);
     // const allData = tempData.reduce((acc, val) => tempData.concat(val), []);
     const graphData = actions.addCollection({ typeName: "graphData" });
 
