@@ -185,7 +185,7 @@ class CheckBoxData {
     this.filteredData = data.filter(item => item.data[filter]);
     this.totalItems = this.filteredData.map(item => item.data[filter].value);
     this.splitData = this.totalItems.map(item => item.split(/\n/));
-    this.allItems = this.splitData.flat();
+    this.allItems = this.splitData.reduce((acc, val) => acc.concat(val), []);
     this.uniqueList = [...new Set(this.allItems)].sort();
     this.aggregatedData = this.countData();
     this.configObjectPie = {
