@@ -7,12 +7,14 @@
 const axios = require("axios");
 require("dotenv").config();
 const path = require("path");
-const MatrixGraph = require("./src/utils/MatrixGraph");
-const PieGraph = require("./src/utils/PieGraph");
-const CheckBoxData = require("./src/utils/CheckboxData");
-const Country = require("./src/utils/Country");
-const StandardPie = require("./src/utils/StandardPie");
-const Comments = require("./src/utils/Comments");
+console.log(path.join(__dirname, "/src/utils/MatrixGraph"));
+
+const MatrixGraph = require(path.join(__dirname, "/src/utils/MatrixGraph"));
+const PieGraph = require(path.join(__dirname, "/src/utils/PieGraph"));
+const CheckBoxData = require(path.join(__dirname, "/src/utils/CheckboxData"));
+const Country = require(path.join(__dirname, "/src/utils/Country"));
+const StandardPie = require(path.join(__dirname, "/src/utils/StandardPie"));
+const Comments = require(path.join(__dirname, "/src/utils/Comments"));
 
 module.exports = function(api) {
   const websurveyID =
