@@ -42,6 +42,9 @@ $colors: (
     $primary-invert
   )
 );
+body {
+  overflow: hidden;
+}
 .box {
   height: 100%;
 }
