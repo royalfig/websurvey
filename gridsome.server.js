@@ -9,12 +9,12 @@ require("dotenv").config();
 const path = require("path");
 console.log(path.join(__dirname, "/utils/MatrixGraph"));
 
-const MatrixGraph = require(path.join(__dirname, "/utils/MatrixGraph"));
-const PieGraph = require(path.join(__dirname, "/utils/PieGraph"));
-const CheckBoxData = require(path.join(__dirname, "/utils/CheckboxData"));
-const Country = require(path.join(__dirname, "/utils/Country"));
-const StandardPie = require(path.join(__dirname, "/utils/StandardPie"));
-const Comments = require(path.join(__dirname, "/utils/Comments"));
+const MatrixGraph = require(path.join(__dirname, "static/utils/MatrixGraph"));
+const PieGraph = require(path.join(__dirname, "static/utils/PieGraph"));
+const CheckBoxData = require(path.join(__dirname, "static/utils/CheckboxData"));
+const Country = require(path.join(__dirname, "static/utils/Country"));
+const StandardPie = require(path.join(__dirname, "static/utils/StandardPie"));
+const Comments = require(path.join(__dirname, "static/utils/Comments"));
 
 module.exports = function(api) {
   const websurveyID =
