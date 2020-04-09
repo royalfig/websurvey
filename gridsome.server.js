@@ -43,11 +43,11 @@ module.exports = function(api) {
         totalData.push(submissions);
       }
 
-      const flattened = totalData => [].concat(...totalData);
-      return flattened;
+      return totalData;
     };
-
-    const allData = await forLoop();
+    const tempData = await forLoop();
+    console.log(tempData);
+    const allData = tempData.flat();
     console.log(allData);
     const graphData = actions.addCollection({ typeName: "graphData" });
 
