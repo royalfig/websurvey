@@ -7,16 +7,16 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "apexcharts": "^3.18.1",
     "buefy": "^0.8.15",
     "emoji-flags": "^1.2.0",
     "gridsome": "^0.7.13",
     "npm-check-updates": "^4.1.2",
+    "dotenv": "^8.2.0",
     "vue-apexcharts": "^1.5.3"
   },
   "devDependencies": {
-    "axios": "^0.19.2",
-    "dotenv": "^8.2.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2"
   }
