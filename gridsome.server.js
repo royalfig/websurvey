@@ -43,12 +43,12 @@ module.exports = function(api) {
 
         totalData.push(submissions);
       }
-      const flatArray = totalData.flat();
-      return flatArray;
+
+      return totalData;
     };
 
-    const allData = await forLoop();
-
+    const allData = await forLoop().flat();
+    console.log(allData);
     const graphData = actions.addCollection({ typeName: "graphData" });
 
     graphData.addNode({
