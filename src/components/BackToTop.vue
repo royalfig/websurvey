@@ -1,13 +1,15 @@
 <template>
   <transition name="back-to-top-fade">
-    <button
-      class="button vue-back-to-top"
-      :style="`bottom:${this.bottom};right:${this.right};`"
-      v-show="visible"
-      @click="backToTop"
-    >
-      <b-icon icon="chevron-up" />
-    </button>
+    <client-only>
+      <button
+        class="button vue-back-to-top"
+        :style="`bottom:${this.bottom};right:${this.right};`"
+        v-show="visible"
+        @click="backToTop"
+      >
+        <b-icon icon="chevron-up" />
+      </button>
+    </client-only>
   </transition>
 </template>
 
@@ -77,7 +79,6 @@ export default {
      */
     backToTop() {
       window.smoothscroll();
-      this.$emit("scrolled");
     }
   }
 };
