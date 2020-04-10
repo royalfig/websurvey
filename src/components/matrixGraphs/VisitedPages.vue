@@ -52,6 +52,9 @@ query {
               horizontalAlign
               offsetX
             }
+            theme {
+              palette
+            }
           }
         }
       }

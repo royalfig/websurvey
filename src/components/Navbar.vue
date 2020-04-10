@@ -16,7 +16,9 @@
       <b-navbar-item href="#">About</b-navbar-item>
       <b-navbar-dropdown label="Results">
         <b-navbar-item href="#general">General</b-navbar-item>
-        <b-navbar-item href="#">Accessibility</b-navbar-item>
+        <b-navbar-item href="#accessibility">Accessibility</b-navbar-item>
+        <b-navbar-item href="#ux">User Experience</b-navbar-item>
+        <b-navbar-item href="#related">Related Websites</b-navbar-item>
         <b-navbar-item href="#demographics">Demographics</b-navbar-item>
       </b-navbar-dropdown>
     </template>
@@ -24,13 +26,13 @@
     <template slot="end">
       <b-navbar-item tag="div">
         <div class="buttons">
-          <a class="button is-danger">
+          <a href="/" class="button is-danger is-inverted is-small">
             <b-icon icon="heart" size="is-small" />
             <span><strong>Donate</strong></span>
           </a>
           <a
             href="https://hssonline.formstack.com/forms/website_redesign"
-            class="button is-outlined"
+            class="button is-small"
           >
             <b-icon icon="clipboard-text" size="is-small" />
             <span><strong>Take the Survey</strong></span>

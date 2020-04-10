@@ -30,6 +30,9 @@ query {
               position
               horizontalAlign
             }
+            theme {
+              palette
+            }
           }
         }
       }

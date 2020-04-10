@@ -4,19 +4,18 @@
       <h2 id="general" class="title is-2">HSS Website Redesign</h2>
       <div class="columns">
         <div class="column">
-          <p class="title is-4">Baseline Responses</p>
+          <p class="title is-4">General Responses</p>
           <div class="content">
             <p>
-              HSS websites represent one of the primary conduits for the
-              organization to achieve its mission of fostering interest in the
-              history of science.
+              The HSS website represents one of organization's primary conduits
+              to achieve its mission of fostering interest in the history of
+              science.
             </p>
             <p>
               The results of this website redesign survey are intended to
-              determine whether these websites are successful in fulfilling this
-              goal and to gauge what could be done to better serve the
-              organization's members and the history of science community more
-              widely.
+              determine whether the HSS website continues to fulfill its goal
+              and to gauge what could be done to better serve the organization's
+              members and the history of science community more widely.
             </p>
           </div>
         </div>
@@ -40,7 +39,7 @@
         </div>
       </div>
       <div class="box">
-        <p class="title is-3">The HSS should redesign its website...</p>
+        <p class="title is-4">The HSS should redesign its website...</p>
         <redesign-comments />
       </div>
     </div>

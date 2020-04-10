@@ -39,6 +39,9 @@ query {
             xaxis {
               categories
             }
+            theme {
+              palette
+            }
           }
         }
       }

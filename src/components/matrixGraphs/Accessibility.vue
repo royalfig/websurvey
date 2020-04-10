@@ -22,6 +22,9 @@ query {
             data
           }
           chartOptions {
+            theme {
+              palette
+            }
             chart {
               type
               height
@@ -59,6 +62,7 @@ query {
     }
   }
 }
+
 </static-query>
 
 <script>

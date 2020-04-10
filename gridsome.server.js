@@ -204,6 +204,9 @@ class CheckBoxData {
         legend: {
           position: "bottom",
           horizontalAlign: "center"
+        },
+        theme: {
+          palette: "palette4"
         }
       }
     };
@@ -230,6 +233,9 @@ class CheckBoxData {
         },
         xaxis: {
           categories: this.uniqueList
+        },
+        theme: {
+          palette: "palette4"
         }
       }
     };
@@ -351,6 +357,9 @@ class Country {
         },
         xaxis: {
           categories: this.categories
+        },
+        theme: {
+          palette: "palette4"
         }
       }
     };
@@ -487,6 +496,9 @@ class MatrixGraph {
         position: "top",
         horizontalAlign: "center",
         offsetX: 0
+      },
+      theme: {
+        palette: "palette4"
       }
     };
     return chartOptions;
@@ -526,6 +538,9 @@ class PieGraph {
         legend: {
           position: "bottom",
           horizontalAlign: "center"
+        },
+        theme: {
+          palette: "palette4"
         }
       }
     };
@@ -595,6 +610,9 @@ class StandardPie {
         legend: {
           position: "bottom",
           horizontalAlign: "center"
+        },
+        theme: {
+          palette: "palette4"
         }
       }
     };
