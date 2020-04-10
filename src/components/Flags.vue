@@ -1,7 +1,7 @@
 <template>
   <div class="flag-card__container tile is-ancestor">
     <div
-      class="tile is-parent "
+      class="tile is-parent"
       v-for="(item, idx) in $static.data.edges[0].node.flags.flag"
       :key="idx"
     >

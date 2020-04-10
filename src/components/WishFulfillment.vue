@@ -4,7 +4,7 @@
       <template
         v-for="(tab, index) in $static.data.edges[0].node.wishFulfillment"
       >
-        <b-tab-item :key="index" :label="index + 1">
+        <b-tab-item :key="index" :label="(index + 1).toString()">
           <div class="content">
             <p>
               {{ tab }}

@@ -3,10 +3,8 @@
     <nav-element />
     <header-element />
 
-    <main id="main" class="columns is-centered">
-      <div class="column is-8">
-        <slot />
-      </div>
+    <main id="main" class="container__center">
+      <slot />
     </main>
   </div>
 </template>
@@ -42,8 +40,9 @@ $colors: (
     $primary-invert
   )
 );
-body {
-  overflow: hidden;
+.container__center {
+  max-width: 992px;
+  margin: 0 auto;
 }
 .box {
   height: 100%;

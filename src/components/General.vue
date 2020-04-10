@@ -4,7 +4,7 @@
       <h2 id="general" class="title is-2">HSS Website Redesign</h2>
       <div class="columns">
         <div class="column">
-          <p class="title is-3">Baseline Responses</p>
+          <p class="title is-4">Baseline Responses</p>
           <div class="content">
             <p>
               HSS websites represent one of the primary conduits for the

@@ -11,7 +11,7 @@
         <visited-pages-graph />
       </div>
       <div class="box">
-        <p class="title is-3">I also visit these pages...</p>
+        <p class="title is-4">I also visit these pages...</p>
         <visited-pages-comment />
       </div>
       <h3 class="title is-3">Site Experience</h3>
@@ -22,11 +22,11 @@
         <helpful-features-graph />
       </div>
       <div class="box">
-        <p class="title is-3">I also find the following pages...</p>
+        <p class="title is-4">I also find the following pages...</p>
         <use-comments />
       </div>
       <div class="box">
-        <p class="title is-3">I wish the HSS website had...</p>
+        <p class="title is-4">I wish the HSS website had...</p>
         <wish-fulfillment />
       </div>
       <div class="box">

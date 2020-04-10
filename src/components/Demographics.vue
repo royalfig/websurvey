@@ -4,7 +4,7 @@
       <h2 id="demographics" class="title is-2">Demographics</h2>
       <div class="columns">
         <div class="column">
-          <p class="title is-3">Why we collect demographic data</p>
+          <p class="title is-4">Why we collect demographic data</p>
           <p>
             Driven by our mission “to foster interest in the history of
             science,” the HSS collects demographic information to understand the
@@ -44,14 +44,17 @@
         </div>
         <div class="column">
           <div class="box">
-            <p class="title is-4">Become a Member</p>
+            <p class="title is-5">Become a Member</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
               fugit eius corrupti ea tempore, officiis nulla dignissimos aliquid
               cum, rerum dicta quam eligendi temporibus nam inventore adipisci
               fuga omnis possimus!
             </p>
-            <a href="/" class="button is-primary">
+            <a
+              href="https://hssonline.org/membership/subscriptions/"
+              class="button is-primary"
+            >
               <b-icon icon="account" />
               <p>Join the HSS</p></a
             >

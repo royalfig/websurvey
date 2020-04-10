@@ -55,12 +55,12 @@ module.exports = function(api) {
       websiteImportance: new PieGraph(
         allData,
         "85042330",
-        "How important is the HSS website?"
+        "The HSS website is important"
       ).configObject,
       socialMedia: new PieGraph(
         allData,
         "85500080",
-        "HSS social media presence"
+        "Level of HSS social media presence"
       ).configObject,
       compBenefit: new PieGraph(
         allData,
@@ -77,17 +77,17 @@ module.exports = function(api) {
       visitedPages: new MatrixGraph(
         allData,
         "85042495",
-        "Which pages do you visit?"
+        "Which pages do you visit on the HSS website?"
       ).configObject,
       helpfulPages: new MatrixGraph(
         allData,
         "85498946",
-        "Which pages are useful?"
+        "Which pages are useful on the HSS website?"
       ).configObject,
       helpfulFeatures: new MatrixGraph(
         allData,
         "85499867",
-        "Which features are useful?"
+        "Which features are useful on the HSS website?"
       ).configObject,
       accessibility: new MatrixGraph(
         allData,
@@ -97,7 +97,7 @@ module.exports = function(api) {
       otherFeatures: new CheckBoxData(
         allData,
         "85499428",
-        "Which features do you find useful on other websites",
+        "Which features do you find useful on other websites?",
         "bar"
       ).configObject,
       device: new CheckBoxData(
@@ -153,7 +153,7 @@ module.exports = function(api) {
       visitedPagesComment: new Comments(
         allData,
         "85498998",
-        "Wish Fulfillment Comments"
+        "Visited Pages Comments"
       ).totalItems,
       useComments: [
         {
