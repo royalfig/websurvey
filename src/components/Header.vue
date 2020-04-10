@@ -14,7 +14,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.container-center {
+.container__center {
   max-width: calc(992px - 3em);
 }
 </style>

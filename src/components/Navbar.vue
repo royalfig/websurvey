@@ -28,7 +28,10 @@
             <b-icon icon="heart" size="is-small" />
             <span><strong>Donate</strong></span>
           </a>
-          <a class="button is-light">
+          <a
+            href="https://hssonline.formstack.com/forms/website_redesign"
+            class="button is-outlined"
+          >
             <b-icon icon="clipboard-text" size="is-small" />
             <span><strong>Take the Survey</strong></span>
           </a>
