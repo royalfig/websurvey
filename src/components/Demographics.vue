@@ -30,9 +30,7 @@
               The structure of HSS demographic questions are still in a pilot
               phase. We welcome your feedback via our contact form.
             </p>
-            <p class="has-text-right">
-              &mdash;Committee on Diversity and Inclusion
-            </p>
+            <p class="has-text-right">&mdash;Committee on Diversity and Inclusion</p>
           </div>
         </div>
       </div>
@@ -45,19 +43,11 @@
         <div class="column">
           <div class="box">
             <p class="title is-5">Become a Member</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              fugit eius corrupti ea tempore, officiis nulla dignissimos aliquid
-              cum, rerum dicta quam eligendi temporibus nam inventore adipisci
-              fuga omnis possimus!
-            </p>
-            <a
-              href="https://hssonline.org/membership/subscriptions/"
-              class="button is-primary"
-            >
+            <p>The History of Science Society is the world’s largest society dedicated to understanding science, technology, medicine, and their interactions with society in historical context. In a world becoming increasingly interconnected by science and technology, contextualized understanding is crucial. Your membership supports an international effort to produce and disseminate leading knowledge about the history of science.</p>
+            <a href="https://hssonline.org/membership/subscriptions/" class="button is-primary">
               <b-icon icon="account" />
-              <p>Join the HSS</p></a
-            >
+              <p>Join the HSS</p>
+            </a>
           </div>
         </div>
       </div>
