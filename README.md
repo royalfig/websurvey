@@ -1,14 +1,11 @@
-# Default starter for Gridsome
+# Visualization of Website Redesign Survey Results
 
-This is the project you get when you run `gridsome create new-project`.
+The results of this website redesign survey are intended to determine whether the HSS website continues to fulfill its goal and to gauge what could be done better to serve the organization's members and the history of science community more widely
 
-### 1. Install Gridsome CLI tool if you don't have
+## Gridsome, Formstack, and Apexcharts
 
-`npm install --global @gridsome/cli`
+This data visualization uses Gridsome (with Bulma/Buefy) to build the UI and create a GraphQL layer for accessing the graph data, which is fetched from the Formstack API at build time. 
 
-### 2. Create a Gridsome project
+For development, run `npm run development`
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+[See the results](https://webredesignresults.netlify.app/)
