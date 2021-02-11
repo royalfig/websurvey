@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "apexcharts": "^3.18.1",
+    "apexcharts": "^3.24.0",
     "buefy": "^0.8.15",
     "emoji-flags": "^1.2.0",
     "gridsome": "^0.7.13",
